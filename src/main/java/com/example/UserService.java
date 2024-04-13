@@ -1,8 +1,5 @@
-package Services;
+package com.example;
 
-import DAO.UserDAO;
-import Entities.User;
-import DTO.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +12,7 @@ public class UserService {
     @Autowired
     UserDAO userDAO;
 
-    public List<User> readAllUsers() {
+    public List<User> readAllUsers(){
         return userDAO.findAll();
     }
 
@@ -32,30 +29,26 @@ public class UserService {
         userDAO.deleteById(id);
     }
 
-    public UserDto updateUser(Integer id, User updatedUser) {
+    public User updateUser(Integer id, User updatedUser) {
         Optional<User> optionalExistingUser = userDAO.findById(id);
 
         if (optionalExistingUser.isPresent()) {
             User existingUser = optionalExistingUser.get();
-
-            existingUser.setName(updatedUser.getName());
-
-            userDAO.save(existingUser);
-
-            return new UserDto(existingUser);
+            existingUser.setNom(updatedUser.getNom());
+            return userDAO.save(existingUser);
         } else {
             return null;
         }
     }
 
-    public User userUpdate(Integer id, Map<String, Object> updates) {
+    public User userUpdate(Integer id, Map<String,Object> updates){
         Optional<User> optionalUser = userDAO.findById(id);
-        if (optionalUser.isPresent()) {
-            User existingUser = optionalUser.get();
-            if (updates.containsKey("name")) {
-                existingUser.setName((String) updates.get("name"));
+        if (optionalUser.isPresent()){
+            User existe = optionalUser.get();
+            if (updates.containsKey("nom")) {
+                existe.setNom((String) updates.get("nom"));
             }
-            return userDAO.save(existingUser);
+            return userDAO.save(existe);
         }
         return null;
     }
