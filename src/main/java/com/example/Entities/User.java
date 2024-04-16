@@ -1,9 +1,10 @@
-package com.example;
+package com.example.Entities;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
