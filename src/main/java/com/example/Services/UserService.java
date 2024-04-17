@@ -19,4 +19,11 @@ public class UserService {
     public List<User> readAllUsers(){
         return userDAO.findAll();
     }
+    public User createUser(User user) {
+        return userDAO.save(user);
+    }
+
+    public void deleteUser(Integer id) {
+        userDAO.deleteById(id);
+    }
 }
