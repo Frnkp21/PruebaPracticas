@@ -1,5 +1,6 @@
-package com.example;
+package com.example.Entities;
 
+<<<<<<< HEAD:src/main/java/com/example/User.java
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -7,6 +8,14 @@ import java.io.Serializable;
 @Table(name = "user")
 public class User implements Serializable {
     private static final long serialVersionUID = -502753434853358270L;
+=======
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "user")
+public class User {
+>>>>>>> 7c165bad11c14481b8bd0cae35563c7aec8dec1a:src/main/java/com/example/Entities/User.java
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

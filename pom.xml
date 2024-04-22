@@ -31,6 +31,7 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.5.7.Final</version>
@@ -41,6 +42,8 @@
 			<version>5.5.7.Final</version> <!-- Cambia la versión según la compatibilidad -->
 		</dependency>
 		<dependency>
+=======
+>>>>>>> 7c165bad11c14481b8bd0cae35563c7aec8dec1a
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
